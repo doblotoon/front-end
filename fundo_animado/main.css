@@ -1,0 +1,21 @@
+@keyframes fundoAnimado{
+	0%{
+		background-position: 0 0, 0 0;
+	}
+	100%{
+		background-position: 100% 100%, 100% 0;
+	}
+}
+
+body{
+	background: purple;
+}
+
+div{
+	background-image: url(http://www.ambito.com.br/NovoSite/content/themes/ambito/assets/img/triangulo-vazado-verde.png);
+	background-repeat: repeat-x, repeat-x;
+	animation: fundoAnimado 5s linear infinite;
+	z-index: 1;
+	width: 100%;
+	height: 999px;
+}
