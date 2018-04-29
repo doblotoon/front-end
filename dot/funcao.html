@@ -1,0 +1,19 @@
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/P/HAJycnAD///8AZY9WAJXMgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAABEBAyIiIiIiAQEDAAAAAAIBAQMjIyMjIgEBAwAAAAACAQEDIyMjIyIBAQMAAAAAAgEBAyMjIyMiAQEDAAAAAAIBAQMDAwMzAgEBAwAAAAACAQEDBVVVVAIBAQMEREREAgEBAwAAAAACAQEDMzMzMzIBARAAAAAAABGAAAAAgAAAAIVQAACAAAAAhVAAAIAAAACFUAAAgAAAAIVAAACKiAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAA" rel="icon" type="image/x-icon" />
+<h1>a page to see with the console opened</h1>
+<canvas id="screen" width="600px" height="400px"></canvas>
+
+ <script>
+    var screen = document.getElementById("screen");
+    var s = screen.getContext("2d");
+
+     for (var i =0; i<600; i+=0.5) {
+        var y = i * i;
+
+         console.log("x ="+ i +" y ="+ y);
+
+        s.beginPath();
+        s.arc(i, y,2,0,2*Math.PI);
+        s.fill();
+    }
+</script>

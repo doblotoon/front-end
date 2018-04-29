@@ -1,0 +1,31 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+    function quad(x,y, color) {
+        var tela = document.getElementById("tela");
+        var c= tela.getContext("2d");
+
+        c.fillStyle=color;
+        c.fillRect(x,y, 50, 50);
+
+        c.strokeStyle="red";
+        c.strokeRect(x, y, 50, 50);
+    }
+
+    function bola(x,y,color) {
+        var tela = document.getElementById("tela");
+        var c = tela.getContext("2d");
+
+        c.fillStyle=color;
+        c.beginPath();
+        c.arc(x+25 ,y, 25, 0, 2*Math.PI);
+        c.fill();
+    }
+
+    for (var x=0; x<600 ;x+= 50) {
+        quad(x,0,"green");
+        quad(x,50, "purple");
+        bola(x,100, "pink");        
+    }
+
+</script>
