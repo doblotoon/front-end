@@ -1,0 +1,55 @@
+<canvas id="tela" width="600px" height="400px"></canvas>
+
+<style>
+    body{background: grey;}
+    canvas{background: green;}
+</style>
+
+<script>
+
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    var alvoX;
+    var alvoY;
+
+    function cor(cor) {
+        c.fillStyle=cor;
+    }
+
+    function circulo(x,y,raio) {
+        c.beginPath();
+        c.arc(x,y,raio,0,2*Math.PI);
+        c.fill();
+    }
+
+    function desenhaAlvo(x,y) {
+        var raio = 40;
+        cor("white");
+        circulo(x,y,raio);
+        cor("red");
+        circulo(x,y,raio-10);
+        cor("white");
+        circulo(x,y,raio-20);
+        cor("red");
+        circulo(x,y,raio-30);
+    }
+
+    function limpa() {
+        c.clearRect(0,0,600,400);
+    }
+
+    function sorteia(num) {
+       var sorteio = Math.floor((Math.random()*num)+1);
+       return sorteio;
+    }
+
+    function desenha() {
+        limpa();
+        alvoX = sorteia(600);
+        alvoY = sorteia(400);
+        desenhaAlvo(alvoX, alvoY);
+    }
+
+    setInterval(desenha,1000);
+</script>

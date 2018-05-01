@@ -1,0 +1,39 @@
+<style>
+    body{ background: black;}
+    canvas{ background: grey;}
+</style>
+
+<canvas  id="tela" width="600px" height="400px"></canvas>
+
+<script>
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    function circulo(x, y, raio) {
+        c.fillStyle="darkRed";
+        c.beginPath();
+        c.arc(x,y,raio* x,0, 2*Math.PI);
+        c.fill();
+    }
+
+    function limpar() {
+        c.clearRect(0,0,600,400);
+    }
+
+    var x = 1; 
+    
+    function desenha() {
+        limpar();
+        circulo(x,100,10);
+        x++;
+    }
+    
+    setInterval(desenha,30);
+    
+    function clicked(evento) {
+        var z = evento.pageX - tela.offsetLeft;
+        var w = evento.pageY - tela.offsetTop;
+
+        circulo(z, y, 10);
+    }
+</script>

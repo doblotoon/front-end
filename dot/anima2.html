@@ -1,0 +1,41 @@
+<style>
+    body{ background: black;}
+    canvas{ background: grey;}
+</style>
+
+<canvas  id="tela" width="1800px" height="1200px"></canvas>
+
+<script>
+
+
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+   function circulo(x,y, raio) {
+       c.strokeStyle="blue";
+
+       c.beginPath();
+       c.arc(x,y,raio*2,0,2*Math.PI);
+       c.stroke();
+   }
+
+   var x = 1;
+   var y = 1
+    var imagem = new Image();
+    imagem.src = "https://i1.sndcdn.com/avatars-000337834530-8m4z02-t500x500.jpg";
+
+   function desenhaImagem(x,y) {
+       c.drawImage(imagem,x,y);
+   }
+
+
+   function desenha() {
+        circulo(x,y, 10);
+        x++;
+        y++;
+   }
+
+   setInterval(desenha, 30);
+
+
+</script>

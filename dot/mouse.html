@@ -1,0 +1,23 @@
+<canvas id="tela" width="600px" height="400px"></canvas>
+
+<script>
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    c.fillStyle="gray";
+    c.fillRect(0,0,600,400);
+
+    function clicouNoCanvas(evento) {
+        var x = evento.pageX - tela.offsetLeft;//pega a posição x do mouse e tira as bordas da esquerda
+        var y = evento.pageY - tela.offsetTop;//pega a posição y do mouse e tira as bordas de cima
+
+        c.fillStyle="black";
+        c.beginPath();
+        c.arc(x,y,10,0,2*Math.PI);
+        c.fill();
+
+        console.log("posicoes x= "+x+" y= "+y);
+    }
+
+    tela.onclick =  clicouNoCanvas;
+</script>
